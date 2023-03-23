@@ -1,6 +1,6 @@
 This is a static [Next.js](https://nextjs.org/) site bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) which is using a headless WordPress install for the backend.
 
-I setup the site locally by using the [`DevKinsta WordPress Environment`](https://kinsta.com/devkinsta/) but you could use any VM or VirtualBox to run the WP Install, I generally prefer Docker. I choose devKinsta so I could quickly deploy the WP install so you could have a way to view this project without needing to setup everything yourself. Check it out [`here`]('')
+I setup the site locally by using the [`DevKinsta WordPress Environment`](https://kinsta.com/devkinsta/) but you could use any VM or VirtualBox to run the WP Install, I generally prefer Docker. I choose devKinsta so I could quickly deploy the WP install so you could have a way to view this project without needing to setup everything yourself. Check it out [`here`](https://next-headless-buamtb75b-msobieray.vercel.app/)
 
 When you have a WP install setup you can turn it in to a headless CMS by using the Simple Website Redirect plugin and configuring it. You can use this [`Kinsta blog post`](https://kinsta.com/blog/headless-wordpress/) for more info.
 
