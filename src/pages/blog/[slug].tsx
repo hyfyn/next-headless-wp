@@ -65,6 +65,8 @@ export const getStaticProps = async ({
       },
     };
   } catch (e) {
-    throw new Error(e.message);
+    if (e instanceof Error) {
+      throw new Error(e.message);
+    }
   }
 };
