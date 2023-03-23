@@ -93,7 +93,7 @@ export const getStaticProps = async () => {
   const postsWithImages = await Promise.all(
     stickyPosts.map((post: Post, idx: number) =>
       fetch(
-        `http://headless-wp.local/wp-json/wp/v2/media/${post.featured_media}`
+        `${process.env.NEXT_PUBLIC_WORDPRESS_URL}/wp-json/wp/v2/media/${post.featured_media}`
       )
         .then((imageData) => imageData.json())
         .then((imageJson) => {

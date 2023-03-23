@@ -2,10 +2,10 @@ import { Post } from "@types";
 import styles from "@styles/Post.module.css";
 import Link from "next/link";
 type Props = {
-  post: Post[];
-  randomPost: Post;
+  post: Post[] | [];
+  randomPost: Post | null;
 };
-export default function Blog({ post, randomPost }: Props) {
+export default function Blog({ post = [], randomPost = null }: Props) {
   return (
     <>
       <nav className={styles["post-navigation"]}>
@@ -13,19 +13,27 @@ export default function Blog({ post, randomPost }: Props) {
           <li>
             <Link href="/">Home Page</Link>
           </li>
-          <li>
-            <Link href={`${randomPost.slug}`}>
-              {" "}
-              Next Post: {randomPost.title.rendered}
-            </Link>
-          </li>
+          {randomPost && (
+            <li>
+              <Link href={`${randomPost?.slug}`}>
+                {" "}
+                Next Post: {randomPost?.title.rendered}
+              </Link>
+            </li>
+          )}
         </ul>
       </nav>
 
       <main className={styles.main}>
-        <section
-          dangerouslySetInnerHTML={{ __html: post[0].content.rendered }}
-        ></section>
+        {post[0] ? (
+          <section
+            dangerouslySetInnerHTML={{ __html: post[0].content.rendered }}
+          ></section>
+        ) : (
+          <section>
+            <h1>Error PreRendering this page</h1>
+          </section>
+        )}
       </main>
     </>
   );
@@ -61,7 +69,7 @@ export const getStaticProps = async ({
     return {
       props: {
         post,
-        randomPost: randomPostJson[Math.floor(Math.random() * 18)],
+        randomPost: randomPostJson[Math.floor(Math.random() * 10)] ?? null,
       },
     };
   } catch (e) {
