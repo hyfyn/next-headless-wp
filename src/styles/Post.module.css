@@ -1,0 +1,52 @@
+.main {
+  padding: 2rem;
+  min-height: 100vh;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.main h1,
+.main h2,
+.main h3,
+.main h4,
+.main h5,
+.main h6 {
+  margin: 3rem 0;
+  font-family: var(--font-mono);
+}
+
+.main img {
+  max-width: 33vw;
+  object-fit: contain;
+  padding: 1rem 0;
+}
+
+.main p,
+.main ul,
+.main ol {
+  font-size: 1.25rem;
+  margin: 1rem 0;
+}
+
+.main ul,
+.main ol {
+  margin: 1rem 2rem;
+
+}
+nav.post-navigation {
+  width: 100%;
+  background-color: var(--color--vivid-red-hex);
+}
+.post-navigation ul {
+  list-style: none;
+  margin: 0 auto;
+  max-width: var(--max-width);
+ 
+}
+
+.post-navigation ul li {
+  display: inline-block;
+  padding: 1rem 1rem 1rem 0;
+  font-size: 1rem;
+  color: rgb(var(--callout-rgb));
+}

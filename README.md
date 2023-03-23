@@ -1,38 +1,33 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+This is a static [Next.js](https://nextjs.org/) site bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) which is using a headless WordPress install for the backend.
+
+I setup the site locally by using the [`DevKinsta WordPress Environment`](https://kinsta.com/devkinsta/) but you could use any VM or VirtualBox to run the WP Install, I generally prefer Docker. I choose devKinsta so I could quickly deploy the WP install so you could have a way to view this project without needing to setup everything yourself. Check it out [`here`]('')
+
+When you have a WP install setup you can turn it in to a headless CMS by using the Simple Website Redirect plugin and configuring it. You can use this [`Kinsta blog post`](https://kinsta.com/blog/headless-wordpress/) for more info.
+
+Next you will want to update the .env file in this project to point to the URL WP is running on.
+
+On a side note, you can generate fake WP content with the FakerPress WP plugin.
+
+I didn't spend a ton of time on styling or creating custom components for every thing because I wanted to get quick and dirty version of a blog created. I felt this approach showcased my ability to work with React/Next.js, basic css, and also WordPress. I hope you like it.
 
 ## Getting Started
 
-First, run the development server:
+First, install the dependencies:
+
+```bash
+npm install
+#or
+yarn install
+```
+
+Second, add a new .env file pointing to you wp install
+
+Third, run the dev server
 
 ```bash
 npm run dev
 # or
 yarn dev
-# or
-pnpm dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
